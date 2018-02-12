@@ -2,9 +2,9 @@ import React from 'react';
 
 const CryptoDetail = (props) => {
   return (
-    <div>
+    <article className="content">
       I'm the CryptoDetail!
-    </div>
+    </article>
   )
 }
 

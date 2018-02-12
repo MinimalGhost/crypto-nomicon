@@ -2,9 +2,13 @@ import React from 'react';
 
 const CryptoList = (props) => {
   return (
-    <div>
-      I'm the CryptoList!
-    </div>
+    <aside className="side">
+      <ul>
+        <li>I'm the CryptoList!</li>
+        <li>I'm the CryptoList!</li>
+        <li>I'm the CryptoList!</li>
+      </ul>
+    </aside>
   )
 }
 

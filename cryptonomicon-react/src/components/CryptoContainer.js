@@ -15,7 +15,7 @@ class CryptoContainer extends React.Component {
 
   render() {
     return (
-      <div className="CryptoContainer">
+      <div className="wrapper">
         <Navigation />
         <CryptoList />
         <CryptoDetail />

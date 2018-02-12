@@ -1,57 +1,55 @@
 
 .wrapper {
-  text-align: center;
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
     "nav"
+    "sidebar"
     "content"
+}
+
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+
+      "nav     nav"
+      "sidebar content"
+      "ad      footer";
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .main-nav {
   grid-area: nav;
   text-align: center;
-  border: 2px solid green;
-  border-radius: 5px;
+  border: 5px solid green;
+  border-radius: 10px;
   height: 70px;
   color: #1BA93C;
 }
 
-.App-header h1 {
-  margin: 0;
-  padding-top: 15px
-}
-
-.App-title {
-  font-family: 'Monoton', cursive;
+.nav-title {
+  font-family: 'Rakkas', cursive;
   font-size: 30px;
 }
 
-.CryptoContainer {
+.side {
+  grid-area: sidebar;
+  border: 5px solid green;
+  border-radius: 10px;
+}
+
+.side ul {
+  list-style-type: none;
+}
+
+.content {
   grid-area: content;
-  border: 2px solid green;
-  border-radius: 5px;
-  height: 70px;
+  border: 5px solid green;
+  border-radius: 10px;
   color: 222;
-}
-
-.CryptoList {
-  list-style: none;
-  margin: 2em;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill,minmax(210px, 1fr));
-}
-
-.CryptoListItem {
-  border: 1px solid #708090;
-  border-radius: 5px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.CryptoListItem h4 {
-  margin: 0
 }

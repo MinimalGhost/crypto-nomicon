@@ -2,11 +2,9 @@ import React from 'react';
 
 const Navigation = (props) => {
   return (
-    <div>
-      <nav className="App-nav">
-        <span className="App-title">CRYPTONOMICON</span>
-      </nav>
-    </div>
+    <nav className="main-nav">
+      <span className="nav-title">CRYPTONOMICON</span>
+    </nav>  
   )
 }
 
