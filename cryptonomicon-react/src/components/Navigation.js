@@ -3,7 +3,9 @@ import React from 'react';
 const Navigation = (props) => {
   return (
     <div>
-      I'm the navigation bar!
+      <nav className="App-nav">
+        <span className="App-title">CRYPTONOMICON</span>
+      </nav>
     </div>
   )
 }

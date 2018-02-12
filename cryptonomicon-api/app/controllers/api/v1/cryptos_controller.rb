@@ -1,6 +1,7 @@
 class Api::V1::CryptosController < ApplicationController
 
   def index
+    if User.all.select(u => u.active === true).length
     @cryptos = Crypto.all
     render json: @cryptos
   end
