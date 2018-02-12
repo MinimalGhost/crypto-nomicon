@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
     JWT.encode(payload, secret, algorithm)
   end
 
-  def login_user(email, password)
+  def login_user(username, password)
     user = User.find_by(username: username)
     if user && user.authenticate(password)
       user
