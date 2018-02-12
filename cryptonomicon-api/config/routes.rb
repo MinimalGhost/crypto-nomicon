@@ -5,4 +5,8 @@ Rails.application.routes.draw do
       resources :tickers, only: [:index, :create]
     end
   end
+
+  post '/login', to: 'auth#login'
+  get '/current_user', to: 'auth#currentUser'
+  post '/signup', to: 'auth#signup'
 end
