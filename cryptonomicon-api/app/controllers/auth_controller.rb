@@ -2,6 +2,7 @@ class AuthController < ApplicationController
   def login
     begin
     user = login_user(params[:username], params[:password])
+    user.active = true
       render json: {
         id: user.id,
         username: user.username,
@@ -10,6 +11,11 @@ class AuthController < ApplicationController
     rescue AuthError => e
       render json: { error: e.msg }, status: 401
     end
+  end
+
+  def logout
+    user = current_user
+    user.active = false
   end
 
   def currentUser

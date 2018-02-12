@@ -27,6 +27,16 @@ const login = (username, password) => {
   }).then(res => res.json());
 }
 
+// hit the logout route and let it know which user is logging out
+
+const logout = (currentUser) => {
+  return fetch(`${URL_ROOT}/logout`, {
+    method: 'PATCH',
+    headers: headers,
+    body: JSON.stringify({ currentUser })
+  }).then(res => res.json());
+}
+
 const signup = (signupBody) => {
   return fetch(`${URL_ROOT}/signup`, {
     method: 'POST',
@@ -47,6 +57,7 @@ export default {
   },
   auth: {
     login,
+    logout,
     getLoggedInUser,
     signup
   }

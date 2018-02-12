@@ -8,6 +8,11 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new
   end
 
+  def update
+    @user = User.find_by(user_params[:username])
+    @user.active = false
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation)

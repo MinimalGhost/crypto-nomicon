@@ -26,11 +26,14 @@ class App extends Component {
   }
 
   removeLoggedInUser = () => {
-    localStorage.removeItem('token')
-    this.setState({
-      auth: { currentUser: null }
+    adapter.auth.logout(this.state.auth.currentUser)
+    .then(() => {
+      localStorage.removeItem('token')
+      this.setState({
+        auth: { currentUser: null }
+      })
+      this.props.history.push('/login')
     })
-    this.props.history.push('/login')
   }
 
   componentDidMount() {
