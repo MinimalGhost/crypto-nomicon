@@ -7,12 +7,15 @@ const API = 'http://localhost:3001/api/v1/cryptocompare'
 
 class CryptoContainer extends React.Component {
   state = {
-
+    searchTerm: "",
+    tickers: [],
+    cryptos: [],
+    selectedItem: []
   }
 
   render() {
     return (
-      <div>
+      <div className="CryptoContainer">
         <Navigation />
         <CryptoList />
         <CryptoDetail />
