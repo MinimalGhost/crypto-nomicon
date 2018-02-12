@@ -1,5 +1,5 @@
 import React from 'react'
-import Navigation from './Navigation'
+import Navbar from './Navbar'
 import CryptoList from './CryptoList'
 import CryptoDetail from './CryptoDetail'
 
@@ -16,7 +16,7 @@ class CryptoContainer extends React.Component {
   render() {
     return (
       <div className="CryptoContainer">
-        <Navigation />
+        <Navbar />
         <CryptoList />
         <CryptoDetail />
       </div>
