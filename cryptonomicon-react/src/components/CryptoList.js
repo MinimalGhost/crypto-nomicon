@@ -1,12 +1,14 @@
 import React from 'react';
+import CryptoListItem from './CryptoListItem'
 
-const CryptoList = (props) => {
+const CryptoList = ({tickers}) => {
+
+  const tickersArray = tickers.map((t) => (< CryptoListItem ticker={t} key={t.id}/>))
+
   return (
     <aside className="side">
       <ul>
-        <li>I'm the CryptoList!</li>
-        <li>I'm the CryptoList!</li>
-        <li>I'm the CryptoList!</li>
+        {tickersArray}
       </ul>
     </aside>
   )
