@@ -11,8 +11,9 @@ const CryptoListItem = ({ticker}) => {
     <li>
       <h3>{ticker.symbol}</h3>
       <small>
-        <span>{ticker.name}</span>
-        <span style={changeColor}>{ticker.price_usd}</span>
+        <p class="split-para">{ticker.name}
+          <span style={changeColor}>{ticker.price_usd}</span>
+        </p>
       </small>
     </li>
   )

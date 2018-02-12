@@ -1,5 +1,6 @@
 
 .wrapper {
+  background: black;
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
@@ -41,15 +42,30 @@
   grid-area: sidebar;
   border: 5px solid green;
   border-radius: 10px;
+  font-family: 'VT323', monospace;
+  color: white
 }
 
 .side ul {
   list-style-type: none;
 }
 
+.split-para {
+  display:block;
+  /* margin:10px; */
+}
+
+.split-para span {
+  display:block;
+  float:right;
+  width:50%;
+  margin-left:10px;
+}
+
 .content {
   grid-area: content;
   border: 5px solid green;
   border-radius: 10px;
-  color: 222;
+  font-family: 'VT323', monospace;
+  color: white
 }
