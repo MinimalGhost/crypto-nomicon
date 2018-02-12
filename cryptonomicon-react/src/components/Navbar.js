@@ -3,17 +3,21 @@ import { Link } from 'react-router-dom'
 
 const Navbar = (props) => {
 
-  const links = ['Login', 'Cryptos'].map(l =>
-    <li key={l}>
-      <a href="">{l}</a>
-    </li>
-  )
-
   const loggedIn = !!props.currentUser
 
   return (
     <nav className="main-nav">
-      <span className="nav-title">CRYPTONOMICON</span>
+      <Link to="/" className="nav-title">CRYPTONOMICON</Link>
+      <ul>
+        { loggedIn ?
+          <li><a onClick={props.logOut}>Logout</a></li>
+        :
+           <div>
+           <li><Link to='/login'>Login</Link></li>
+           <li><Link to='/signup'>Sign Up</Link></li>
+           </div>
+        }
+      </ul>
     </nav>
   )
 }

@@ -1,14 +1,73 @@
 import React, { Component } from 'react';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
+import adapter from './adapter'
 import CryptoContainer from './components/CryptoContainer'
+import Navbar from './components/Navbar'
+import Login from './components/Login'
+import Signup from './components/Signup'
 
 class App extends Component {
+  state = {
+    auth: { currentUser: null }
+  }
+
+  setLoggedInUser = (user) => {
+    localStorage.setItem('token', user.token)
+    this.setState({
+      auth: {
+        currentUser: {
+          username: user.username,
+          id: user.id
+        }
+      }
+    })
+    // render persistant user data here
+    // this.getUserCryptos()
+  }
+
+  removeLoggedInUser = () => {
+    localStorage.removeItem('token')
+    this.setState({
+      auth: { currentUser: null }
+    })
+    this.props.history.push('/login')
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      adapter.auth.getLoggedInUser().then(user => {
+        if (user) {
+          this.setState({ auth: {currentUser: user } })
+        } else {
+          this.setState({ auth: { currentUser: null } })
+        }
+      })
+    } else {
+      console.log('No token found');
+    }
+  }
+
   render() {
     return (
       <div>
+        <Navbar
+          currentUser={this.state.auth.currentUser}
+          logOut={this.removeLoggedInUser}
+        />
+      <Switch>
+        <Route exact path='/login' render={(routerProps) => {
+            return <Login history={routerProps.history} setUser={this.setLoggedInUser} />
+          }} />
+
+        <Route exact path='/signup' render={(routerProps) => {
+            return <Signup history={routerProps.history} setUser={this.setLoggedInUser} />
+          }} />
+      </Switch>
         <CryptoContainer />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

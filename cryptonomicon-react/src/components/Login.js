@@ -1,5 +1,5 @@
 import React from 'react';
-import api from '../../api/adapter'
+import adapter from '../adapter'
 
 class Login extends React.Component {
   state = {
@@ -9,7 +9,7 @@ class Login extends React.Component {
 
   handleLogin = (e) => {
     e.preventDefault()
-    api.auth.login(this.state.username, this.state.password).then(res => {
+    adapter.auth.login(this.state.username, this.state.password).then(res => {
       if (res.error) {
         alert(res.error)
       } else {
