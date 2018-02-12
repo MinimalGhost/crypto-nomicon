@@ -1,6 +1,5 @@
 
 .wrapper {
-  background: black;
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
@@ -31,6 +30,7 @@
   border-radius: 10px;
   height: 70px;
   color: #1BA93C;
+  background: black;
 }
 
 .nav-title {
@@ -39,6 +39,7 @@
 }
 
 .side {
+  background: black;
   grid-area: sidebar;
   border: 5px solid green;
   border-radius: 10px;
@@ -63,6 +64,7 @@
 }
 
 .content {
+  background: black;
   grid-area: content;
   border: 5px solid green;
   border-radius: 10px;

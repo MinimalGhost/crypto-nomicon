@@ -67,7 +67,7 @@ class App extends Component {
             return <Signup history={routerProps.history} setUser={this.setLoggedInUser} />
           }} />
       </Switch>
-        <CryptoContainer />
+        { this.state.auth.currentUser != null && <CryptoContainer /> }
       </div>
     );
   }
