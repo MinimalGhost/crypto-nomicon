@@ -16,8 +16,9 @@ class AuthController < ApplicationController
   end
 
   def logout
+    byebug
     user = current_user
-    @@all.delete_if {|u| u.id === user.id }
+    @@all.delete_if {|u| u === user}
     render json: nil
   end
 

@@ -8,7 +8,11 @@ import Signup from './components/Signup'
 
 class App extends Component {
   state = {
-    auth: { currentUser: null }
+    auth: { currentUser: null },
+    searchTerm: "",
+    tickers: [],
+    cryptos: [],
+    selectedItem: {}
   }
 
   setLoggedInUser = (user) => {
@@ -21,6 +25,7 @@ class App extends Component {
         }
       }
     })
+    this.fetchTickers()
   }
 
   removeLoggedInUser = () => {
@@ -30,8 +35,17 @@ class App extends Component {
       this.setState({
         auth: { currentUser: null }
       })
+      console.log(localStorage.token)
       this.props.history.push('/login')
     })
+  }
+
+  fetchTickers = () => {
+    adapter.tickers.getTickers()
+    .then(tickers_data => this.setState({
+      tickers: tickers_data,
+      selectedItem: tickers_data[0]
+    }))
   }
 
   componentDidMount() {
@@ -65,7 +79,7 @@ class App extends Component {
             return <Signup history={routerProps.history} setUser={this.setLoggedInUser} />
           }} />
       </Switch>
-        { this.state.auth.currentUser != null && <CryptoContainer /> }
+        { this.state.auth.currentUser != null && <CryptoContainer tickers={this.state.tickers} selectedItem={this.state.selectedItem}/> }
       </div>
     );
   }

@@ -4,11 +4,8 @@ import CryptoDetail from './CryptoDetail'
 import adapter from '../adapter'
 
 class CryptoContainer extends React.Component {
-  state = {
-    searchTerm: "",
-    tickers: [],
-    cryptos: [],
-    selectedItem: {}
+  constructor(props) {
+    super(props)
   }
 
   fetchCryptos = () => {
@@ -16,14 +13,6 @@ class CryptoContainer extends React.Component {
     .then(cryptos_data => this.setState({
       cryptos: cryptos_data,
       selectedItem: cryptos_data[0]
-    }))
-  }
-
-  fetchTickers = () => {
-    adapter.tickers.getTickers()
-    .then(tickers_data => this.setState({
-      tickers: tickers_data,
-      selectedItem: tickers_data[0]
     }))
   }
 
@@ -49,21 +38,21 @@ class CryptoContainer extends React.Component {
     }))
   }
 
-  componentDidMount() {
-    let t = localStorage.getItem("token")
-    console.log(t)
-    if (t) {
-      this.fetchTickers()
-    }
-  }
+  // componentDidMount() {
+  //   let t = localStorage.getItem("token")
+  //   console.log(t)
+  //   if (t) {
+  //     this.fetchTickers()
+  //   }
+  // }
 
   render() {
     return (
       <div className="wrapper">
-        { this.state.tickers.length > 0 &&
-        <CryptoList tickers={this.state.tickers} handleSelectItem={this.handleSelectItem}/> }
-        { this.state.tickers.length > 0 &&
-        <CryptoDetail tickers={this.state.tickers} ticker={this.state.selectedItem} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
+        { this.props.tickers.length > 0 &&
+        <CryptoList tickers={this.props.tickers} handleSelectItem={this.handleSelectItem}/> }
+        { this.props.tickers.length > 0 &&
+        <CryptoDetail tickers={this.props.tickers} ticker={this.props.selectedItem} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
         }
       </div>
     )
