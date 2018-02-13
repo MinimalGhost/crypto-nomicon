@@ -19,6 +19,27 @@ const getCryptos = () => {
   }).then(res => res.json());
 }
 
+const getTickers = () => {
+  return fetch(`${API_ROOT}/tickers`, {
+    headers: headers
+  }).then(res => res.json());
+}
+
+const deleteTicker = (id) => {
+  return fetch(`${API_ROOT}/tickers/${id}`, {
+    method: 'DELETE',
+    headers: headers
+  }).then(res => res.json());
+}
+
+const addTicker = (crypto_id) => {
+  return fetch(`${API_ROOT}/tickers`, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({ crypto_id })
+  }).then(res => res.json());
+}
+
 const login = (username, password) => {
   return fetch(`${URL_ROOT}/login`, {
     method: 'POST',
@@ -31,7 +52,7 @@ const login = (username, password) => {
 
 const logout = (currentUser) => {
   return fetch(`${URL_ROOT}/logout`, {
-    method: 'PATCH',
+    method: 'POST',
     headers: headers,
     body: JSON.stringify({ currentUser })
   }).then(res => res.json());
@@ -54,6 +75,11 @@ const getLoggedInUser = () => {
 export default {
   cryptos: {
     getCryptos
+  },
+  tickers: {
+    getTickers,
+    addTicker,
+    deleteTicker
   },
   auth: {
     login,

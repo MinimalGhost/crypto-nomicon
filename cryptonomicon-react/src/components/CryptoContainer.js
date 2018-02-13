@@ -19,15 +19,42 @@ class CryptoContainer extends React.Component {
     }))
   }
 
+  fetchTickers = () => {
+    adapter.tickers.getTickers()
+    .then(tickers_data => this.setState({
+      tickers: tickers_data,
+      selectedItem: tickers_data[0]
+    }))
+  }
+
+  handleAddTicker = (id) => {
+    adapter.tickers.addTicker(id)
+    .then(tickers_data => this.setState({
+      tickers: tickers_data,
+      selectedItem: tickers_data[0]
+    }))
+  }
+
+  handleDeleteTicker = (id) => {
+    adapter.tickers.deleteTicker(id)
+    .then(tickers_data => this.setState({
+      tickers: tickers_data,
+      selectedItem: tickers_data[0]
+    }))
+  }
+
   componentDidMount() {
-    this.fetchCryptos()
+    this.fetchTickers()
   }
 
   render() {
     return (
       <div className="wrapper">
-        <CryptoList tickers={this.state.cryptos}/>
-        <CryptoDetail ticker={this.state.selectedItem}/>
+        { this.state.tickers.length > 0 &&
+        <CryptoList tickers={this.state.tickers}/> }
+        { this.state.tickers.length > 0 &&
+        <CryptoDetail tickers={this.state.tickers} ticker={this.state.selectedItem} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
+        }
       </div>
     )
   }

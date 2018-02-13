@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :cryptos
-      resources :tickers, only: [:index, :create]
+      resources :tickers, only: [:index, :create, :destroy]
       resources :users
     end
   end

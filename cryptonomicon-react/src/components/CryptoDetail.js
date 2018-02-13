@@ -1,6 +1,7 @@
 import React from 'react';
 
-const CryptoDetail = ({ticker}) => {
+const CryptoDetail = ({tickers, ticker, handleDeleteTicker, handleAddTicker}) => {
+  console.log(ticker.id)
 
   let changeColor = {color: 'black'}
   if (ticker.percent_change_24h) {
@@ -9,6 +10,9 @@ const CryptoDetail = ({ticker}) => {
 
   return (
     <article className="content">
+      { tickers.includes(ticker) ?
+        <button onClick={() => handleDeleteTicker(ticker.id)}>X</button> :
+        <button onClick={() => handleAddTicker(ticker.id)}>+</button> }
       <h4>{ticker.name}</h4>
       <small>{`(${ticker.symbol}) Supply: ${ticker.total_supply}`}</small>
       <h2 style={changeColor}>{ticker.price_usd} {`(${ticker.percent_change_24h}%)`}</h2>
