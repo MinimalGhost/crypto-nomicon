@@ -1,8 +1,9 @@
 import React from 'react';
 
 const CryptoDetail = ({tickers, ticker, handleDeleteTicker, handleAddTicker}) => {
-  console.log(ticker.id)
-
+  console.log(tickers)
+  console.log(ticker)
+  
   let changeColor = {color: 'black'}
   if (ticker.percent_change_24h) {
     ticker.percent_change_24h[0] === "-" ? changeColor = { color: 'red' } : changeColor = { color: 'green'}

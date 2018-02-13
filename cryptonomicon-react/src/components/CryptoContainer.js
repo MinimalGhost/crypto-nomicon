@@ -7,14 +7,17 @@ class CryptoContainer extends React.Component {
   state = {
     searchTerm: "",
     tickers: [],
-    selectedItem: {}
+    cryptos: [],
+    selectedItem: {},
+    toggle: "tickers"
   }
 
   fetchCryptos = () => {
     adapter.cryptos.getCryptos()
     .then(cryptos_data => this.setState({
-      tickers: cryptos_data,
-      selectedItem: cryptos_data[0]
+      cryptos: cryptos_data,
+      selectedItem: cryptos_data[0],
+      toggle: "cryptos"
     }))
   }
 
@@ -22,7 +25,8 @@ class CryptoContainer extends React.Component {
     adapter.tickers.getTickers()
     .then(tickers_data => this.setState({
       tickers: tickers_data,
-      selectedItem: tickers_data[0]
+      selectedItem: tickers_data[0],
+      toggle: "tickers"
     }))
   }
 
@@ -56,7 +60,7 @@ class CryptoContainer extends React.Component {
     return (
       <div className="wrapper">
         { this.state.tickers.length > 0 &&
-        <CryptoList tickers={this.state.tickers} handleSelectItem={this.handleSelectItem} fetchTickers={this.fetchTickers} fetchCryptos={this.fetchCryptos}/> }
+        <CryptoList tickers={this.state.tickers} cryptos={this.state.cryptos} toggle={this.state.toggle} handleSelectItem={this.handleSelectItem} fetchTickers={this.fetchTickers} fetchCryptos={this.fetchCryptos}/> }
         { this.state.tickers.length > 0 &&
         <CryptoDetail tickers={this.state.tickers} ticker={this.state.selectedItem} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
         }
