@@ -50,7 +50,11 @@ class CryptoContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchTickers()
+    let t = localStorage.getItem("token")
+    console.log(t)
+    if (t) {
+      this.fetchTickers()
+    }
   }
 
   render() {
