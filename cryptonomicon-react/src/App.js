@@ -21,8 +21,6 @@ class App extends Component {
         }
       }
     })
-    // render persistant user data here
-    // this.getUserCryptos()
   }
 
   removeLoggedInUser = () => {

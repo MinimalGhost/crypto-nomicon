@@ -1,8 +1,10 @@
 class AuthController < ApplicationController
+  @@all = []
+
   def login
     begin
     user = login_user(params[:username], params[:password])
-    user.active = true
+    @@all << user
       render json: {
         id: user.id,
         username: user.username,
@@ -15,7 +17,8 @@ class AuthController < ApplicationController
 
   def logout
     user = current_user
-    user.active = false
+    @@all.delete_if {|u| u.id === user.id }
+    render json: nil
   end
 
   def currentUser

@@ -50,11 +50,10 @@ const login = (username, password) => {
 
 // hit the logout route and let it know which user is logging out
 
-const logout = (currentUser) => {
+const logout = () => {
   return fetch(`${URL_ROOT}/logout`, {
     method: 'POST',
-    headers: headers,
-    body: JSON.stringify({ currentUser })
+    headers: headers
   }).then(res => res.json());
 }
 
