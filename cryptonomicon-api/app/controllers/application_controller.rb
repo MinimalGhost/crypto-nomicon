@@ -16,19 +16,19 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-    User.find_by(id: user_id_from_token(token))
+    User.find_by(id: user_id_from_token)
   end
 
-  def user_id_from_token(token)
-    decode_token(token).first['user_id']
+  def user_id_from_token
+    decode_token.first['user_id']
   end
 
-  def decode_token(token)
+  def decode_token
     puts 'request made ', token
     if token
       begin
         JWT.decode(token, secret, true, { algorithm: algorithm })
-      rescue
+      rescue JWT::DecodeError
         return [{}]
       end
     else

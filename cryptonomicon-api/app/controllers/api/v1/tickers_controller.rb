@@ -3,7 +3,6 @@ class Api::V1::TickersController < ApplicationController
   def index
     user = current_user
     tickers = user.cryptos
-    # do some fetch that will return all our tickers from third party api
     render json: tickers
   end
 

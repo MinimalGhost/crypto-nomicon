@@ -50,7 +50,7 @@ class App extends Component {
   }
 
   handlePortfolio = () => {
-    
+
   }
 
   render() {
