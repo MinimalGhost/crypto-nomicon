@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CryptoListItem = ({ticker}) => {
+const CryptoListItem = ({ ticker, handleSelectItem }) => {
 
   let changeColor = {color: 'black'}
   if (ticker.percent_change_24h) {
@@ -9,7 +9,7 @@ const CryptoListItem = ({ticker}) => {
 
   return (
     <li>
-      <h3>  
+      <h3 onClick={() => handleSelectItem(ticker)}>
         <p className="split-para">{ticker.symbol}
           <span style={changeColor}>{ticker.price_usd}</span>
         </p>

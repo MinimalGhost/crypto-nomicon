@@ -27,6 +27,12 @@ class CryptoContainer extends React.Component {
     }))
   }
 
+  handleSelectItem = (ticker) => {
+    this.setState({
+      selectedItem: ticker
+    })
+  }
+
   handleAddTicker = (id) => {
     adapter.tickers.addTicker(id)
     .then(tickers_data => this.setState({
@@ -51,7 +57,7 @@ class CryptoContainer extends React.Component {
     return (
       <div className="wrapper">
         { this.state.tickers.length > 0 &&
-        <CryptoList tickers={this.state.tickers}/> }
+        <CryptoList tickers={this.state.tickers} handleSelectItem={this.handleSelectItem}/> }
         { this.state.tickers.length > 0 &&
         <CryptoDetail tickers={this.state.tickers} ticker={this.state.selectedItem} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
         }
