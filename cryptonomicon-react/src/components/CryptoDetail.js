@@ -10,8 +10,8 @@ const CryptoDetail = ({tickers, ticker, handleDeleteTicker, handleAddTicker}) =>
   return (
     <article className="content">
       { tickers.find(t => t.id === ticker.id) ?
-        <button onClick={() => handleDeleteTicker(ticker.id)}>X</button> :
-        <button onClick={() => handleAddTicker(ticker.id)}>+</button> }
+        <button onClick={() => handleDeleteTicker(ticker.id)}>Add</button> :
+        <button onClick={() => handleAddTicker(ticker.id)}>Remove</button> }
       <h4>{ticker.name}</h4>
       <small>{`(${ticker.symbol}) Supply: ${ticker.total_supply}`}</small>
       <h2 style={changeColor}>{ticker.price_usd} {`(${ticker.percent_change_24h}%)`}</h2>

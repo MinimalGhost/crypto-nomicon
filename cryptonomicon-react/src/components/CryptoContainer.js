@@ -39,16 +39,14 @@ class CryptoContainer extends React.Component {
   handleAddTicker = (id) => {
     adapter.tickers.addTicker(id)
     .then(tickers_data => this.setState({
-      tickers: tickers_data,
-      selectedItem: tickers_data[0]
+      tickers: tickers_data
     }))
   }
 
   handleDeleteTicker = (id) => {
     adapter.tickers.deleteTicker(id)
     .then(tickers_data => this.setState({
-      tickers: tickers_data,
-      selectedItem: tickers_data[0]
+      tickers: tickers_data
     }))
   }
 
