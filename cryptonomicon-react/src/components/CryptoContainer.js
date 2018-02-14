@@ -70,12 +70,12 @@ class CryptoContainer extends React.Component {
   render() {
     return (
       <div className="wrapper">
+      <CryptoCrawler cryptos={this.state.cryptos} />
         { this.state.tickers.length > 0 &&
         <CryptoList tickers={this.state.tickers} cryptos={this.state.cryptos} toggle={this.state.toggle} handleSelectItem={this.handleSelectItem} fetchTickers={this.fetchTickers} fetchCryptos={this.fetchCryptos}/> }
         { this.state.tickers.length > 0 &&
         <CryptoDetail tickers={this.state.tickers} ticker={this.state.selectedItem} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
         }
-        <CryptoCrawler cryptos={this.state.cryptos} />
       </div>
     )
   }
