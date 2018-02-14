@@ -2,11 +2,11 @@
 .wrapper {
   display: grid;
   grid-gap: 20px;
-  overflow-y: auto;
   grid-template-areas:
     "nav"
     "sidebar"
     "content"
+    "footer"
 }
 
 @media (min-width: 500px) {
@@ -16,7 +16,7 @@
 
       "nav     nav"
       "sidebar content"
-      "ad      footer";
+      "footer  footer"
   }
   nav ul {
     display: flex;
@@ -38,6 +38,10 @@
   list-style-type: none;
   display: block;
   padding: 8px;
+}
+
+.main-nav a {
+  text-decoration-style: none
 }
 
 .nav-title {
@@ -83,11 +87,85 @@
   border-radius: 10px;
   font-family: 'VT323', monospace;
   font-size: x-large;
-  color: white
+  color: white;
 }
 
 .content button {
   display:block;
   float:right;
   border-radius: 5px
+}
+
+$duration: 30s;
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.main-footer {
+  grid-area: footer;
+  border: 5px solid green;
+  border-radius: 10px;
+  color: #1BA93C;
+  background: black;
+  overflow: hidden;
+  padding-left: 100%;
+  /* position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 4rem;
+  background-color: rgba(#000, 0.9);
+  padding-left: 100%;  */
+
+}
+
+.ticker {
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;
+  white-space: nowrap;
+  padding-right: 100%;
+
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+ -webkit-animation-name: ticker;
+         animation-name: ticker;
+  -webkit-animation-duration: $duration;
+          animation-duration: $duration;
+
+  &__item {
+
+    display: inline-block;
+
+    padding: 0 2rem;
+    font-size: 2rem;
+    color: white;
+
+  }
+
 }
