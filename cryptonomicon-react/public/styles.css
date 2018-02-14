@@ -25,16 +25,23 @@
 }
 
 .main-nav {
+  margin: auto;
+  height: auto;
   grid-area: nav;
-  text-align: center;
   border: 5px solid green;
   border-radius: 10px;
-  height: 70px;
   color: #1BA93C;
   background: black;
 }
 
+.main-nav li {
+  list-style-type: none;
+  display: block;
+  padding: 8px;
+}
+
 .nav-title {
+  text-align: left;
   font-family: 'Rakkas', cursive;
   font-size: 30px;
 }
@@ -50,6 +57,11 @@
 
 .side ul {
   list-style-type: none;
+}
+
+.side button {
+  border-radius: 5px;
+  margin-left: 5px
 }
 
 .split-para {

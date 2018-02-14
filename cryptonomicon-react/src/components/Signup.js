@@ -33,10 +33,10 @@ class Signup extends React.Component {
         <input value={this.state.username} name="username" type="text" placeholder="Username" onChange={this.onInputChange}></input> <br/>
 
         <label>Password</label>
-        <input value={this.state.password} name="password" type="text" placeholder="Password" onChange={this.onInputChange}></input> <br/>
+        <input value={this.state.password} name="password" type="password" placeholder="Password" onChange={this.onInputChange}></input> <br/>
 
         <label>Password confirmation</label>
-        <input value={this.state.password_confirmation} name="password_confirmation" type="text" placeholder="Confirm Password" onChange={this.onInputChange}></input> <br/>
+        <input value={this.state.password_confirmation} name="password_confirmation" type="password" placeholder="Confirm Password" onChange={this.onInputChange}></input> <br/>
 
         <input type="submit" value="Sign Up" />
       </form>

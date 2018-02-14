@@ -1,5 +1,6 @@
 import React from 'react';
 import adapter from '../adapter'
+import { Link } from 'react-router-dom'
 
 class Login extends React.Component {
   state = {
@@ -27,11 +28,14 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleLogin}>
-        <input value={this.state.username} type="text" name="username" placeholder="Username" onChange={this.onInputChange} />
-        <input value={this.state.password} type="password" name="password" placeholder="Password" onChange={this.onInputChange} />
-        <input type="submit" />
-      </form>
+      <div>
+        <form onSubmit={this.handleLogin}>
+          <input value={this.state.username} type="text" name="username" placeholder="Username" onChange={this.onInputChange} />
+          <input value={this.state.password} type="password" name="password" placeholder="Password" onChange={this.onInputChange} />
+          <input type="submit" />
+        </form>
+        <Link to='/signup'>No Account? Sign Up</Link>
+      </div>
     )
   }
 }
