@@ -2,7 +2,6 @@
 .wrapper {
   display: grid;
   grid-gap: 20px;
-  overflow-y: auto;
   grid-template-areas:
     "nav"
     "sidebar"
@@ -18,6 +17,7 @@
       "sidebar content"
       "ad      footer";
   }
+
   nav ul {
     display: flex;
     justify-content: space-between;
@@ -48,11 +48,13 @@
 
 .side {
   background: black;
+  height: 60vh;
   grid-area: sidebar;
   border: 5px solid green;
   border-radius: 10px;
   font-family: 'VT323', monospace;
-  color: white
+  color: white;
+  overflow-y: auto;
 }
 
 .side ul {
@@ -61,7 +63,12 @@
 
 .side button {
   border-radius: 5px;
-  margin-left: 5px
+  margin-left: 5px;
+  position: fixed;
+}
+
+#dosomething {
+  margin-left: 80px;
 }
 
 .split-para {

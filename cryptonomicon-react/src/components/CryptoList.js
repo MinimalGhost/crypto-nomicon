@@ -8,7 +8,7 @@ const CryptoList = ({tickers, cryptos, toggle, handleSelectItem, fetchTickers, f
 
   return (
     <aside className="side">
-      <button onClick={fetchTickers}>My Cryptos</button>
+      <button id="dosomething" onClick={fetchTickers}>My Cryptos</button>
       <button onClick={fetchCryptos}>All Cryptos</button>
       <ul>
         { toggle === 'cryptos' ? cryptosArray : tickersArray }
