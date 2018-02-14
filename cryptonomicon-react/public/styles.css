@@ -113,14 +113,25 @@ body {
   list-style-type: none;
 }
 
-.side button {
+/* .side button {
   border-radius: 5px;
   margin-left: 5px;
   position: fixed;
+} */
+
+.side button {
+  font-family: 'VT323', monospace;
+  font-size: x-large;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 5px;
+  background-color: black;
+  color: red;
+  margin-top: 20px;
 }
 
 #dosomething {
-  margin-left: 80px;
+  margin-left: 30px;
 }
 
 .split-para {
@@ -146,9 +157,14 @@ body {
 }
 
 .content button {
-  display:block;
-  float:right;
-  border-radius: 5px
+  font-family: 'VT323', monospace;
+  font-size: x-large;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 5px;
+  background-color: black;
+  color: red;
+  margin-top: 20px;
 }
 
 .marquee {
