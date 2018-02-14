@@ -6,7 +6,7 @@ const CryptoCrawler = ({cryptos}) => {
 
   return (
     <div>
-      <p class="marquee">
+      <p className="marquee">
         <span>{crawlerArray}</span>
       </p>
     </div>

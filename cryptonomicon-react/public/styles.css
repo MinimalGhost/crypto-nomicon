@@ -4,6 +4,7 @@
   grid-gap: 20px;
   grid-template-areas:
     "nav"
+    "crawler"
     "sidebar"
     "content"
 }
@@ -14,8 +15,8 @@
     grid-template-areas:
 
       "nav     nav"
+      "crawler crawler"
       "sidebar content"
-      "ad      footer";
   }
 
   nav ul {
@@ -100,10 +101,19 @@
 }
 
 .marquee {
+  grid-area: crawler;
+  margin:auto;
+  background: black;
+  height: auto;
+  width: 98%;
   margin: 0 auto;
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
+  border: 5px solid green;
+  border-radius: 10px;
+  font-family: 'VT323', monospace;
+  color: white;
 }
 
 .marquee span {
