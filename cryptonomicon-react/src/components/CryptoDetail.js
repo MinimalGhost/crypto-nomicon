@@ -1,9 +1,7 @@
 import React from 'react';
 
 const CryptoDetail = ({tickers, ticker, handleDeleteTicker, handleAddTicker}) => {
-  console.log(tickers)
-  console.log(ticker)
-  
+
   let changeColor = {color: 'black'}
   if (ticker.percent_change_24h) {
     ticker.percent_change_24h[0] === "-" ? changeColor = { color: 'red' } : changeColor = { color: 'green'}
@@ -11,7 +9,7 @@ const CryptoDetail = ({tickers, ticker, handleDeleteTicker, handleAddTicker}) =>
 
   return (
     <article className="content">
-      { tickers.includes(ticker) ?
+      { tickers.find(t => t.id === ticker.id) ?
         <button onClick={() => handleDeleteTicker(ticker.id)}>X</button> :
         <button onClick={() => handleAddTicker(ticker.id)}>+</button> }
       <h4>{ticker.name}</h4>
