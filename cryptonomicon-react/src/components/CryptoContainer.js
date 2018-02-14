@@ -1,6 +1,7 @@
 import React from 'react'
 import CryptoList from './CryptoList'
 import CryptoDetail from './CryptoDetail'
+import CryptoCrawler from './CryptoCrawler'
 import adapter from '../adapter'
 
 class CryptoContainer extends React.Component {
@@ -18,6 +19,14 @@ class CryptoContainer extends React.Component {
       cryptos: cryptos_data,
       selectedItem: cryptos_data[0],
       toggle: "cryptos"
+    }))
+  }
+
+  fetchCryptosForCrawler = () => {
+    adapter.cryptos.getCryptos()
+    .then(cryptos_data => this.setState({
+      cryptos: cryptos_data,
+      selectedItem: cryptos_data[0]
     }))
   }
 
@@ -54,6 +63,10 @@ class CryptoContainer extends React.Component {
     this.fetchTickers()
   }
 
+  componentWillMount() {
+    this.fetchCryptosForCrawler();
+  }
+
   render() {
     return (
       <div className="wrapper">
@@ -62,6 +75,7 @@ class CryptoContainer extends React.Component {
         { this.state.tickers.length > 0 &&
         <CryptoDetail tickers={this.state.tickers} ticker={this.state.selectedItem} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
         }
+        <CryptoCrawler cryptos={this.state.cryptos} />
       </div>
     )
   }
