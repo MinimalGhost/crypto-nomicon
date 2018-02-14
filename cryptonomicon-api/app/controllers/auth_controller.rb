@@ -32,6 +32,8 @@ class AuthController < ApplicationController
 
   def signup
     user = User.new(user_params)
+    user.save
+    user.cryptos << Crypto.first
     if user.save
       begin
         user = login_user(user_params[:username], user_params[:password])
