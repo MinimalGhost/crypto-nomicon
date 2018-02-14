@@ -7,6 +7,7 @@ const Navbar = (props) => {
 
   return (
     <nav className="main-nav">
+      <img src="cthulhu_8bit.png" alt="necro image" />
       <li className="nav-title">CRYPTONOMICON</li>
       { loggedIn ?
       <li onClick={props.logOut}>Logout</li>

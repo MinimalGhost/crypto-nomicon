@@ -28,10 +28,12 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="crypto-form">
         <form onSubmit={this.handleLogin}>
-          <input value={this.state.username} type="text" name="username" placeholder="Username" onChange={this.onInputChange} />
-          <input value={this.state.password} type="password" name="password" placeholder="Password" onChange={this.onInputChange} />
+          <label>Username: </label>
+          <input value={this.state.username} type="text" name="username" placeholder="Username" onChange={this.onInputChange} /> <br />
+          <label>Password: </label>
+          <input value={this.state.password} type="password" name="password" placeholder="Password" onChange={this.onInputChange} /> <br />
           <input type="submit" />
         </form>
         <Link to='/signup'>No Account? Sign Up</Link>

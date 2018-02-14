@@ -1,3 +1,7 @@
+body {
+  background-color: #000;
+}
+
 
 .wrapper {
   display: grid;
@@ -38,14 +42,61 @@
 .main-nav li {
   list-style-type: none;
   display: block;
-  padding: 8px;
+  margin: 4px;
+  color: red;
+  text-align: center;
+}
+
+/* .main-nav li:nth-last-child(1) {
+  margin-left: 120px;;
+} */
+
+.main-nav img {
+  margin: 5px auto;
+  width: 40%;
+  display: block;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  display: block;
 }
 
 .nav-title {
-  text-align: left;
+  display: inline-block;
   font-family: 'Rakkas', cursive;
-  font-size: 30px;
+  font-size: 36px;
 }
+
+.crypto-form {
+  background: black;
+  margin: 20px 20%;
+  padding: 10px;
+  text-align: center;
+  border: 5px solid green;
+  border-radius: 10px;
+  font-family: 'VT323', monospace;
+  color: white;
+}
+
+.crypto-form input {
+  margin: 5px;
+}
+
+.crypto-form button {
+  margin: 5px;
+}
+
+.crypto-form a {
+  color: white;
+  text-decoration: none;
+}
+
+/* .crypto-form form {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+} */
 
 .side {
   background: black;
