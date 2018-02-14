@@ -30,11 +30,11 @@ class Login extends React.Component {
     return (
       <div className="crypto-form">
         <form onSubmit={this.handleLogin}>
-          <label>Username: </label>
-          <input value={this.state.username} type="text" name="username" placeholder="Username" onChange={this.onInputChange} /> <br />
-          <label>Password: </label>
-          <input value={this.state.password} type="password" name="password" placeholder="Password" onChange={this.onInputChange} /> <br />
-          <input type="submit" />
+          <label>Username: </label> <br />
+          <input value={this.state.username} type="text" name="username" onChange={this.onInputChange} /> <br />
+          <label>Password: </label> <br />
+          <input value={this.state.password} type="password" name="password" onChange={this.onInputChange} /> <br />
+          <input className="submit-button" type="submit" />
         </form>
         <Link to='/signup'>No Account? Sign Up</Link>
       </div>

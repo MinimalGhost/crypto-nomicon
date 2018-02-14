@@ -28,17 +28,17 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSignup}>
-        <label>Username</label>
+      <form className="crypto-form" onSubmit={this.handleSignup}>
+        <label>Username: </label> <br />
         <input value={this.state.username} name="username" type="text" placeholder="Username" onChange={this.onInputChange}></input> <br/>
 
-        <label>Password</label>
+        <label>Password: </label> <br />
         <input value={this.state.password} name="password" type="password" placeholder="Password" onChange={this.onInputChange}></input> <br/>
 
-        <label>Password confirmation</label>
+        <label>Confirm password:</label> <br />
         <input value={this.state.password_confirmation} name="password_confirmation" type="password" placeholder="Confirm Password" onChange={this.onInputChange}></input> <br/>
 
-        <input type="submit" value="Sign Up" />
+        <input className="submit-button" type="submit" value="Sign Up" />
       </form>
     )
   }
