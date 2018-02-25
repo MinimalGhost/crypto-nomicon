@@ -25,4 +25,4 @@ to get dependencies installed locally and have it running on your local host. If
 
 ## License
 
-MIT Copyright 2018 [Eric Kollegger](https://github.com/MinimalGhost) and [Shahin Motia](https://github.com/nspp99b)
+[MIT](https://oss.ninja/mit) Copyright 2018 [Eric Kollegger](https://github.com/MinimalGhost) and [Shahin Motia](https://github.com/nspp99b)
