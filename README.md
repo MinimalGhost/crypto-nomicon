@@ -4,7 +4,7 @@ A cryptocurrency tracking and portfolio management tool with a retro 80s-90s fla
 
 ## Intalling / Getting Started
 
-This project was bootstrapped with [Create React App](https://www.google.com). It also uses [npm](https://www.npmjs.com/) and a [react](https://reactjs.org/) based frontend. The backend uses [Rails 5.1.4](http://weblog.rubyonrails.org/2017/8/24/Rails-5-1-4-rc1-and-5-0-6-rc1-released/) and the [Postgres](https://www.postgresql.org/) database.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It also uses [npm](https://www.npmjs.com/) and a [react](https://reactjs.org/) based frontend. The backend uses [Rails 5.1.4](http://weblog.rubyonrails.org/2017/8/24/Rails-5-1-4-rc1-and-5-0-6-rc1-released/) and the [Postgres](https://www.postgresql.org/) database.
 
 ### Server setup
 
