@@ -2,6 +2,7 @@ class AuthController < ApplicationController
   @@all = []
 
   def login
+    create_or_update_cryptos
     begin
     user = login_user(params[:username], params[:password])
     @@all << user
@@ -31,6 +32,7 @@ class AuthController < ApplicationController
   end
 
   def signup
+    create_or_update_cryptos
     user = User.new(user_params)
     user.save
     user.cryptos << Crypto.first
