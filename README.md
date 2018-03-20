@@ -1,6 +1,10 @@
 # Cryptonomicon
 
-A cryptocurrency tracking and portfolio management tool with a retro 80s-90s flair.
+![home](screenshots/home.png "Cryptonomicon HomeScreen")
+
+A cryptocurrency portfolio tracking tool with a pleasingly 80s shell.  
+
+![portfolio](screenshots/portfolio.png "Cryptonomicon Portfolio")
 
 ## Intalling / Getting Started
 
@@ -13,7 +17,7 @@ Fork and/or clone the repository, then from the top level directory `cd` into `c
 rails db:create
 rails db:migrate
 ```
-Then you can spool up the server locally by running `rails s` which defaults to serving `http://localhost:3000`. 
+Then you can spool up the server locally by running `rails s` which defaults to serving `http://localhost:3000`.
 
 ### Frontend setup
 
