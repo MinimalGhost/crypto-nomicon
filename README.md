@@ -1,6 +1,6 @@
 # Cryptonomicon
 
-A cryptocurrency tracking and portfolio management tool with a retro 80s-90s flair.
+A cryptocurrency tracking and portfolio management tool with a retro 80s-90s flair. Demo video can be found [here](https://youtu.be/GyZZVEVo1J4).
 
 ## Intalling / Getting Started
 
