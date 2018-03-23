@@ -3,6 +3,7 @@
 ![home](screenshots/home.png "Cryptonomicon HomeScreen")
 
 A cryptocurrency portfolio tracking tool with a pleasingly 80s shell.  
+[Demo](https://youtu.be/trXg_CGXoNQ)
 
 ![portfolio](screenshots/portfolio.png "Cryptonomicon Portfolio")
 
