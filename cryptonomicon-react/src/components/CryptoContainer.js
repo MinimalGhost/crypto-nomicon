@@ -41,12 +41,14 @@ class CryptoContainer extends React.Component {
     }));
   };
 
+  //crypto selection triggers rerendering of cryptodetail pane
   handleSelectItem = (ticker) => {
     this.setState({
       selectedItem: ticker
     });
   };
 
+  //adds a crypto to user's tickers in api
   handleAddTicker = (id) => {
     adapter.tickers.addTicker(id)
     .then(tickers_data => this.setState({
@@ -54,6 +56,7 @@ class CryptoContainer extends React.Component {
     }));
   };
 
+  //delete's ticker from user's tickers in api
   handleDeleteTicker = (id) => {
     adapter.tickers.deleteTicker(id)
     .then(tickers_data => this.setState({
@@ -71,6 +74,7 @@ class CryptoContainer extends React.Component {
     return priceColor;
   };
 
+  //make sure there's something in tickers before you render components that map
   render() {
     return (
       <div className="wrapper">
