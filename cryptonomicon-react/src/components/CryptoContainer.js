@@ -13,6 +13,7 @@ class CryptoContainer extends React.Component {
     toggle: "tickers"
   };
 
+  //initiate fetches for cryptos and user's portfolio of tickers
   componentDidMount() {
     this.fetchTickers();
     console.log("fetchTickers fired");
@@ -20,6 +21,7 @@ class CryptoContainer extends React.Component {
     console.log("fetchCryptosForCrawler fired");
   };
 
+  //get cryptos and toggle crypto list component however you like
   fetchCryptos = (list="cryptos") => {
     adapter.cryptos.getCryptos()
     .then(cryptos_data => this.setState({
@@ -29,6 +31,7 @@ class CryptoContainer extends React.Component {
     }));
   };
 
+  //get user's tickers and toggle list component to display tickers
   fetchTickers = () => {
     adapter.tickers.getTickers()
     .then(tickers_data => this.setState({
@@ -58,14 +61,25 @@ class CryptoContainer extends React.Component {
     }));
   };
 
+  //dynamically assign price color to ticker
+  setPriceColor = (ticker) => {
+    let priceColor = {color: 'black'};
+    //if ticker has a pc24, dynamically assign red to negative
+    if (ticker.percent_change_24h) {
+      ticker.percent_change_24h[0] === "-" ? priceColor = { color: 'red' } : priceColor = { color: 'green'};
+    };
+    return priceColor;
+  };
+
   render() {
     return (
       <div className="wrapper">
       <CryptoCrawler cryptos={this.state.cryptos} />
         { this.state.tickers.length > 0 &&
-        <CryptoList tickers={this.state.tickers} cryptos={this.state.cryptos} toggle={this.state.toggle} handleSelectItem={this.handleSelectItem} fetchTickers={this.fetchTickers} fetchCryptos={this.fetchCryptos}/> }
+        <CryptoList tickers={this.state.tickers} cryptos={this.state.cryptos} toggle={this.state.toggle} priceColor={this.setPriceColor} handleSelectItem={this.handleSelectItem} fetchTickers={this.fetchTickers} fetchCryptos={this.fetchCryptos}/> }
         { this.state.tickers.length > 0 &&
-        <CryptoDetail tickers={this.state.tickers} ticker={this.state.selectedItem} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
+        <CryptoDetail tickers={this.state.tickers} ticker={this.state.selectedItem}
+          priceColor={this.setPriceColor} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
         }
       </div>
     );

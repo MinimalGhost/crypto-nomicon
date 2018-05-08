@@ -1,12 +1,8 @@
 import React from 'react';
 
-const CryptoDetail = ({tickers, ticker, handleDeleteTicker, handleAddTicker}) => {
-
-  let changeColor = {color: 'black'}
-  if (ticker.percent_change_24h) {
-    ticker.percent_change_24h[0] === "-" ? changeColor = { color: 'red' } : changeColor = { color: 'green'}
-  }
-
+const CryptoDetail = ({tickers, ticker, priceColor, handleDeleteTicker, handleAddTicker}) => {
+  //dynamically render either an add or remove button
+  //dynamically assign color of ticker price
   return (
     <article className="content">
       <div className="content-detail">
@@ -15,10 +11,10 @@ const CryptoDetail = ({tickers, ticker, handleDeleteTicker, handleAddTicker}) =>
           <button onClick={() => handleAddTicker(ticker.id)}>Add</button> }
         <h2>{ticker.name}</h2>
         <h4>{`(${ticker.symbol}) Supply: ${ticker.total_supply}`}</h4>
-        <h2 style={changeColor}>{ticker.price_usd} {`(${ticker.percent_change_24h}%)`}</h2>
+        <h2 style={priceColor(ticker)}>{ticker.price_usd} {`(${ticker.percent_change_24h}%)`}</h2>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default CryptoDetail
+export default CryptoDetail;
