@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
-import adapter from './adapter'
-import CryptoContainer from './components/CryptoContainer'
-import Navbar from './components/Navbar'
-import Login from './components/Login'
-import Signup from './components/Signup'
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import './App.css';
+import adapter from './adapter';
+import CryptoContainer from './components/CryptoContainer';
+import Navbar from './components/Navbar';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 class App extends Component {
   state = {
     auth: { currentUser: null }
-  }
+  };
 
   setLoggedInUser = (user) => {
-    localStorage.setItem('token', user.token)
+    localStorage.setItem('token', user.token);
     this.setState({
       auth: {
         currentUser: {
@@ -20,38 +21,34 @@ class App extends Component {
           id: user.id
         }
       }
-    })
-  }
+    });
+  };
 
   removeLoggedInUser = () => {
     adapter.auth.logout(this.state.auth.currentUser)
     .then(() => {
-      localStorage.removeItem('token')
+      localStorage.removeItem('token');
       this.setState({
         auth: { currentUser: null }
-      })
-      this.props.history.push('/login')
-    })
-  }
+      });
+      this.props.history.push('/login');
+    });
+  };
 
   componentDidMount() {
     const token = localStorage.getItem('token');
     if (token) {
       adapter.auth.getLoggedInUser().then(user => {
         if (user) {
-          this.setState({ auth: {currentUser: user } })
+          this.setState({ auth: {currentUser: user } });
         } else {
-          this.setState({ auth: { currentUser: null } })
-        }
-      })
+          this.setState({ auth: { currentUser: null } });
+        };
+      });
     } else {
       console.log('No token found');
-    }
-  }
-
-  handlePortfolio = () => {
-
-  }
+    };
+  };
 
   render() {
     return (
@@ -72,7 +69,7 @@ class App extends Component {
         { this.state.auth.currentUser != null && <CryptoContainer /> }
       </div>
     );
-  }
-}
+  };
+};
 
 export default withRouter(App);

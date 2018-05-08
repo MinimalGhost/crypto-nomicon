@@ -2,7 +2,6 @@ body {
   background-color: #000;
 }
 
-
 .wrapper {
   display: grid;
   grid-gap: 20px;
@@ -66,10 +65,6 @@ body {
   text-align: center;
   font-family: 'VT323', monospace;
 }
-
-/* .main-nav li:nth-last-child(1) {
-  margin-left: 120px;;
-} */
 
 .main-nav img {
   margin: 5px auto;
@@ -150,11 +145,6 @@ body {
 
 }
 
-/* .crypto-form form {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-} */
-
 .side {
   background: black;
   height: 60vh;
@@ -169,12 +159,6 @@ body {
 .side ul {
   list-style-type: none;
 }
-
-/* .side button {
-  border-radius: 5px;
-  margin-left: 5px;
-  position: fixed;
-} */
 
 .side button {
   font-family: 'VT323', monospace;
@@ -275,10 +259,6 @@ body {
 .marquee p {
   margin: 0
 }
-
-/* .marquee2 span {
-  animation-delay: 60.5s;
-} */
 
 @keyframes marquee {
   0% {
