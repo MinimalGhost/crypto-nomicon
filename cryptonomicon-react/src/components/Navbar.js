@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
 
-  const loggedIn = !!props.currentUser
+  //confirm currentUser prop is not null
+  const loggedIn = !!props.currentUser;
 
+  //conditionally render link to log in or log out
   return (
     <nav className="main-nav">
       <img src="cthulhu_8bit.png" alt="necro image" />
@@ -15,7 +17,7 @@ const Navbar = (props) => {
       <li><Link to='/login'>Join Us</Link></li>
       }
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
