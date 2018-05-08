@@ -16,24 +16,16 @@ class CryptoContainer extends React.Component {
   componentDidMount() {
     this.fetchTickers();
     console.log("fetchTickers fired");
-    this.fetchCryptosForCrawler();
+    this.fetchCryptos("tickers");
     console.log("fetchCryptosForCrawler fired");
   };
 
-  fetchCryptos = () => {
+  fetchCryptos = (list="cryptos") => {
     adapter.cryptos.getCryptos()
     .then(cryptos_data => this.setState({
       cryptos: cryptos_data,
       selectedItem: cryptos_data[0],
-      toggle: "cryptos"
-    }));
-  };
-
-  fetchCryptosForCrawler = () => {
-    adapter.cryptos.getCryptos()
-    .then(cryptos_data => this.setState({
-      cryptos: cryptos_data,
-      selectedItem: cryptos_data[0]
+      toggle: list
     }));
   };
 

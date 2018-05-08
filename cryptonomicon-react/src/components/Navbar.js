@@ -9,7 +9,7 @@ const Navbar = (props) => {
   //conditionally render link to log in or log out
   return (
     <nav className="main-nav">
-      <img src="cthulhu_8bit.png" alt="necro image" />
+      <img src="cthulhu_8bit.png" alt="cryptonomicon logo" />
       <li className="nav-title">CRYPTONOMICON</li>
       { loggedIn ?
       <li className="nav-logout" onClick={props.logOut}>Leave Us</li>
