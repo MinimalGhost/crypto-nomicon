@@ -1,8 +1,8 @@
-import React from 'react'
-import CryptoList from './CryptoList'
-import CryptoDetail from './CryptoDetail'
-import CryptoCrawler from './CryptoCrawler'
-import adapter from '../adapter'
+import React from 'react';
+import CryptoList from './CryptoList';
+import CryptoDetail from './CryptoDetail';
+import CryptoCrawler from './CryptoCrawler';
+import adapter from '../adapter';
 
 class CryptoContainer extends React.Component {
   state = {
@@ -11,7 +11,14 @@ class CryptoContainer extends React.Component {
     cryptos: [],
     selectedItem: {},
     toggle: "tickers"
-  }
+  };
+
+  componentDidMount() {
+    this.fetchTickers();
+    console.log("fetchTickers fired");
+    this.fetchCryptosForCrawler();
+    console.log("fetchCryptosForCrawler fired");
+  };
 
   fetchCryptos = () => {
     adapter.cryptos.getCryptos()
@@ -19,16 +26,16 @@ class CryptoContainer extends React.Component {
       cryptos: cryptos_data,
       selectedItem: cryptos_data[0],
       toggle: "cryptos"
-    }))
-  }
+    }));
+  };
 
   fetchCryptosForCrawler = () => {
     adapter.cryptos.getCryptos()
     .then(cryptos_data => this.setState({
       cryptos: cryptos_data,
       selectedItem: cryptos_data[0]
-    }))
-  }
+    }));
+  };
 
   fetchTickers = () => {
     adapter.tickers.getTickers()
@@ -36,36 +43,28 @@ class CryptoContainer extends React.Component {
       tickers: tickers_data,
       selectedItem: tickers_data[0],
       toggle: "tickers"
-    }))
-  }
+    }));
+  };
 
   handleSelectItem = (ticker) => {
     this.setState({
       selectedItem: ticker
-    })
-  }
+    });
+  };
 
   handleAddTicker = (id) => {
     adapter.tickers.addTicker(id)
     .then(tickers_data => this.setState({
       tickers: tickers_data
-    }))
-  }
+    }));
+  };
 
   handleDeleteTicker = (id) => {
     adapter.tickers.deleteTicker(id)
     .then(tickers_data => this.setState({
       tickers: tickers_data
-    }))
-  }
-
-  componentDidMount() {
-    this.fetchTickers()
-  }
-
-  componentWillMount() {
-    this.fetchCryptosForCrawler();
-  }
+    }));
+  };
 
   render() {
     return (
@@ -77,8 +76,8 @@ class CryptoContainer extends React.Component {
         <CryptoDetail tickers={this.state.tickers} ticker={this.state.selectedItem} handleAddTicker={this.handleAddTicker} handleDeleteTicker={this.handleDeleteTicker} />
         }
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
-export default CryptoContainer
+export default CryptoContainer;
