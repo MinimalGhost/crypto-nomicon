@@ -190,7 +190,6 @@ body {
 
 .split-para {
   display:block;
-  /* margin:10px; */
 }
 
 .split-para span {
@@ -200,7 +199,7 @@ body {
   margin-left:10px;
 }
 
-.content {
+/* .content {
   background: black;
   grid-area: content;
   border: 5px solid green;
@@ -234,7 +233,7 @@ body {
   background-color: black;
   color: white;
   margin-top: 15px;
-}
+} */
 
 /* .marquee {
   grid-area: crawler;
