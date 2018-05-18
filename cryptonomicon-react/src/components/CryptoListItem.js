@@ -1,4 +1,5 @@
 import React from 'react';
+import './CryptoListItem.css';
 
 const CryptoListItem = ({ ticker, priceColor, handleSelectItem }) => {
   //dynamically render priceColor
