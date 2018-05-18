@@ -1,7 +1,7 @@
 import React from 'react';
 import adapter from '../adapter';
 import { Link } from 'react-router-dom';
-import './Login.css';
+import './LoginSignup.css';
 
 //controlled component to handle login
 

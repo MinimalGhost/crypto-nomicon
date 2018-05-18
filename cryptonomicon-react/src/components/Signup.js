@@ -1,5 +1,6 @@
 import React from 'react';
 import adapter from '../adapter';
+import './LoginSignup.css';
 
 //Controlled component to handle Signup
 

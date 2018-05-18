@@ -236,15 +236,12 @@ body {
   margin-top: 15px;
 }
 
-.marquee {
+/* .marquee {
   grid-area: crawler;
   background: black;
-  /* height: auto; */
-  /* width: 97.5%; */
   margin: 0.5 auto;
   white-space: nowrap;
   overflow: hidden;
-  /* position: absolute; */
   border: 5px solid green;
   border-radius: 10px;
   font-family: 'VT323', monospace;
@@ -269,4 +266,4 @@ body {
   100% {
     transform: translate(-100%, 0);
   }
-}
+} */

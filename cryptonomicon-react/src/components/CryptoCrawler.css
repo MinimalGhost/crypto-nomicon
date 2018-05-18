@@ -1,0 +1,31 @@
+.marquee {
+  grid-area: crawler;
+  background: black;
+  margin: 0.5 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 5px solid green;
+  border-radius: 10px;
+  font-family: 'VT323', monospace;
+  font-size: xx-large;
+  color: white;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 100s linear infinite;
+}
+
+.marquee p {
+  margin: 0
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
