@@ -1,0 +1,39 @@
+.crypto-form {
+  background: black;
+  margin: 20px 20%;
+  padding: 10px;
+  text-align: center;
+  border: 5px solid green;
+  border-radius: 10px;
+  font-family: 'VT323', monospace;
+  font-size: 1.5em;
+  color: white;
+}
+
+.submit-button {
+  font-family: 'VT323', monospace;
+  font-size: x-large;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 5px;
+  background-color: black;
+  color: red;
+  margin-top: 20px;
+}
+
+.crypto-form input {
+  margin: 5px;
+}
+
+.crypto-form button {
+  margin: 5px;
+}
+
+.crypto-form a {
+  color: white;
+  text-decoration: none;
+}
+
+.crypto-form a:hover {
+  color: red;
+}

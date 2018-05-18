@@ -1,4 +1,5 @@
 import React from 'react';
+import './CryptoContainer.css';
 import CryptoList from './CryptoList';
 import CryptoDetail from './CryptoDetail';
 import CryptoCrawler from './CryptoCrawler';

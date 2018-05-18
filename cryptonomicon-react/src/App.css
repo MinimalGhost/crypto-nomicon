@@ -2,7 +2,7 @@ body {
   background-color: #000;
 }
 
-.wrapper {
+/* .wrapper {
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
@@ -20,12 +20,14 @@ body {
       "nav     nav"
       "crawler crawler"
       "sidebar content"
-  }
+  } */
 
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-  }
+
+/* } */
+
+/* nav ul {
+  display: flex;
+  justify-content: space-between;
 }
 
 .main-nav {
@@ -102,9 +104,9 @@ body {
   text-transform: uppercase;
   text-align: center;
   font-family: 'VT323', monospace;
-}
+} */
 
-.crypto-form {
+/* .crypto-form {
   background: black;
   margin: 20px 20%;
   padding: 10px;
@@ -143,7 +145,7 @@ body {
 .crypto-form a:hover {
   color: red;
 
-}
+} */
 
 .side {
   background: black;
