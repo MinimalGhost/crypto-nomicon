@@ -147,7 +147,7 @@ body {
 
 } */
 
-.side {
+/* .side {
   background: black;
   height: 60vh;
   grid-area: sidebar;
@@ -186,7 +186,7 @@ body {
 
 #dosomething {
   margin-left: 30px;
-}
+} */
 
 .split-para {
   display:block;
