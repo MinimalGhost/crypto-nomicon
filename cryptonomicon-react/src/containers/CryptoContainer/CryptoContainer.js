@@ -1,9 +1,9 @@
 import React from 'react';
 import './CryptoContainer.css';
-import CryptoList from './CryptoList';
-import CryptoDetail from './CryptoDetail';
-import CryptoCrawler from './CryptoCrawler';
-import adapter from '../adapter';
+import CryptoList from '../../components/CryptoList/CryptoList';
+import CryptoDetail from '../../components/CryptoDetail/CryptoDetail';
+import CryptoCrawler from '../../components/CryptoCrawler/CryptoCrawler';
+import adapter from '../../adapter';
 
 class CryptoContainer extends React.Component {
   state = {

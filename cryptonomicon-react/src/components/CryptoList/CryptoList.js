@@ -1,6 +1,6 @@
 import React from 'react';
-import CryptoListItem from './CryptoListItem';
 import './CryptoList.css';
+import CryptoListItem from '../CryptoListItem/CryptoListItem';
 
 const CryptoList = ({tickers, cryptos, toggle, priceColor, handleSelectItem, fetchTickers, fetchCryptos }) => {
 
