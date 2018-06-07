@@ -4,10 +4,10 @@ import './Navbar.css';
 
 const Navbar = (props) => {
 
-  //confirm currentUser prop is not null
+  // confirm currentUser prop is not null
   const loggedIn = !!props.currentUser;
 
-  //conditionally render link to log in or log out
+  // conditionally render link to log in or log out
   return (
     <nav className="main-nav">
       <img src="cthulhu_8bit.png" alt="cryptonomicon logo" />

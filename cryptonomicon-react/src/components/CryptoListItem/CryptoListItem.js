@@ -2,7 +2,7 @@ import React from 'react';
 import './CryptoListItem.css';
 
 const CryptoListItem = ({ ticker, priceColor, handleSelectItem }) => {
-  //dynamically render priceColor
+  // dynamically render priceColor
   return (
     <li>
       <h3 onClick={() => handleSelectItem(ticker)}>

@@ -7,7 +7,7 @@ const CryptoList = ({tickers, cryptos, toggle, priceColor, handleSelectItem, fet
   const tickersArray = tickers.map((t) => (<CryptoListItem ticker={t} priceColor={priceColor} handleSelectItem={handleSelectItem} key={t.id}/>));
   const cryptosArray = cryptos.map((c) => (<CryptoListItem ticker={c} priceColor={priceColor} handleSelectItem={handleSelectItem} key={c.id}/>));
 
-  //conditionally render either tickersArray or cryptosArray based on toggle
+  // conditionally render either tickersArray or cryptosArray based on toggle
   return (
     <aside className="side">
       <button id="dosomething" onClick={fetchTickers}>My Cryptos</button>

@@ -3,7 +3,7 @@ import adapter from '../../adapter';
 import { Link } from 'react-router-dom';
 import './LoginSignup.css';
 
-//controlled component to handle login
+// controlled component to handle login
 
 class Login extends React.Component {
 
@@ -12,8 +12,8 @@ class Login extends React.Component {
     password: ''
   };
 
-  //call login fetch using state as args, on success
-  //change browser URL and setUser token for hot login
+  // call login fetch using state as args, on success
+  // change browser URL and setUser token for hot login
   handleLogin = (e) => {
     e.preventDefault();
     adapter.auth.login(this.state.username, this.state.password).then(res => {
@@ -26,7 +26,7 @@ class Login extends React.Component {
     });
   };
 
-  //control text input fields
+  // control text input fields
   onInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value

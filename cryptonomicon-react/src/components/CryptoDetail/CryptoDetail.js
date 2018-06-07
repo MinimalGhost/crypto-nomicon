@@ -2,8 +2,8 @@ import React from 'react';
 import './CryptoDetail.css';
 
 const CryptoDetail = ({tickers, ticker, priceColor, handleDeleteTicker, handleAddTicker}) => {
-  //dynamically render either an add or remove button
-  //dynamically assign color of ticker price
+  // dynamically render either an add or remove button
+  // dynamically assign color of ticker price
   return (
     <article className="content">
       <div className="content-detail">

@@ -2,7 +2,7 @@ import React from 'react';
 import adapter from '../../adapter';
 import './LoginSignup.css';
 
-//Controlled component to handle Signup
+// controlled component to handle Signup
 
 class Signup extends React.Component {
 
@@ -12,8 +12,8 @@ class Signup extends React.Component {
     password_confirmation: ''
   };
 
-  //on submit, provide call signup fetch using state as argument
-  //if successful, change browser URL and set user token for hot login
+  // on submit, provide call signup fetch using state as argument
+  // if successful, change browser URL and set user token for hot login
   handleSignup = (e) => {
     e.preventDefault();
     adapter.auth.signup(this.state).then(res => {
@@ -26,7 +26,7 @@ class Signup extends React.Component {
     });
   };
 
-  //control text input fields
+  // control text input fields
   onInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
