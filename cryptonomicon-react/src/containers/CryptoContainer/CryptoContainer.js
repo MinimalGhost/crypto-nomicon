@@ -14,7 +14,7 @@ class CryptoContainer extends React.Component {
     toggle: "tickers"
   };
 
-  //initiate fetches for cryptos and user's portfolio of tickers
+  // initiate fetches for cryptos and user's portfolio of tickers
   componentDidMount() {
     this.fetchTickers();
     console.log("fetchTickers fired");
@@ -22,7 +22,7 @@ class CryptoContainer extends React.Component {
     console.log("fetchCryptosForCrawler fired");
   };
 
-  //get cryptos and toggle crypto list component however you like
+  // get cryptos and toggle crypto list component however you like
   fetchCryptos = (list="cryptos") => {
     adapter.cryptos.getCryptos()
     .then(cryptos_data => this.setState({
@@ -32,7 +32,7 @@ class CryptoContainer extends React.Component {
     }));
   };
 
-  //get user's tickers and toggle list component to display tickers
+  // get user's tickers and toggle list component to display tickers
   fetchTickers = () => {
     adapter.tickers.getTickers()
     .then(tickers_data => this.setState({
@@ -42,14 +42,14 @@ class CryptoContainer extends React.Component {
     }));
   };
 
-  //crypto selection triggers rerendering of cryptodetail pane
+  // crypto selection triggers rerendering of cryptodetail pane
   handleSelectItem = (ticker) => {
     this.setState({
       selectedItem: ticker
     });
   };
 
-  //adds a crypto to user's tickers in api
+  // adds a crypto to user's tickers in api
   handleAddTicker = (id) => {
     adapter.tickers.addTicker(id)
     .then(tickers_data => this.setState({
@@ -57,7 +57,7 @@ class CryptoContainer extends React.Component {
     }));
   };
 
-  //delete's ticker from user's tickers in api
+  // delete's ticker from user's tickers in api
   handleDeleteTicker = (id) => {
     adapter.tickers.deleteTicker(id)
     .then(tickers_data => this.setState({
@@ -65,17 +65,17 @@ class CryptoContainer extends React.Component {
     }));
   };
 
-  //dynamically assign price color to ticker
+  // dynamically assign price color to ticker
   setPriceColor = (ticker) => {
     let priceColor = {color: 'black'};
-    //if ticker has a pc24, dynamically assign red to negative
+    // if ticker has a pc24, dynamically assign red to negative
     if (ticker.percent_change_24h) {
       ticker.percent_change_24h[0] === "-" ? priceColor = { color: 'red' } : priceColor = { color: 'green'};
     };
     return priceColor;
   };
 
-  //make sure there's something in tickers before you render components that map
+  // make sure there's something in tickers before you render components that map
   render() {
     return (
       <div className="wrapper">

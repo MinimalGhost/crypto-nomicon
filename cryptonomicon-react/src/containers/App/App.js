@@ -51,8 +51,8 @@ class App extends Component {
 
 
 
-  //render navbar; render login or signup based on route
-  //conditionally render cryptocontainer on auth
+  // render navbar; render login or signup based on route
+  // conditionally render cryptocontainer on auth
 
   render() {
     return (
