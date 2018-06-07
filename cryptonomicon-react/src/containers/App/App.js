@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import './App.css';
-import adapter from './adapter';
-import CryptoContainer from './components/CryptoContainer';
-import Navbar from './components/Navbar';
-import Login from './components/Login';
-import Signup from './components/Signup';
+import adapter from '../adapter';
+import CryptoContainer from '../CryptoContainer/CryptoContainer';
+import Navbar from '../components/Navbar';
+import Login from '../components/Login';
+import Signup from '../components/Signup';
 
 class App extends Component {
   state = {
