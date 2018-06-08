@@ -1,10 +1,15 @@
 # Cryptonomicon
 
-A cryptocurrency tracking and portfolio management tool with a retro 80s-90s flair. Demo video can be found [here](https://youtu.be/GyZZVEVo1J4).
+![home](screenshots/home.png "Cryptonomicon HomeScreen")
 
-## Intalling / Getting Started
+A cryptocurrency portfolio tracking tool with a pleasingly 80s shell.  
+[Demo](https://youtu.be/trXg_CGXoNQ)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It also uses [npm](https://www.npmjs.com/) and a [react](https://reactjs.org/) based frontend. The backend uses [Rails 5.1.4](http://weblog.rubyonrails.org/2017/8/24/Rails-5-1-4-rc1-and-5-0-6-rc1-released/) and the [Postgres](https://www.postgresql.org/) database.
+![portfolio](screenshots/portfolio.png "Cryptonomicon Portfolio")
+
+## Installing / Getting Started
+
+This project was bootstrapped with [Create React App](https://www.google.com). It also uses [npm](https://www.npmjs.com/) and a [react](https://reactjs.org/) based frontend. The backend uses [Rails 5.1.4](http://weblog.rubyonrails.org/2017/8/24/Rails-5-1-4-rc1-and-5-0-6-rc1-released/) and the [Postgres](https://www.postgresql.org/) database.
 
 ### Server setup
 
@@ -13,7 +18,7 @@ Fork and/or clone the repository, then from the top level directory `cd` into `c
 rails db:create
 rails db:migrate
 ```
-Then you can spool up the server locally by running `rails s` which defaults to serving `http://localhost:3000`. 
+Then you can spool up the server locally by running `rails s` which defaults to serving `http://localhost:3000`.
 
 ### Frontend setup
 

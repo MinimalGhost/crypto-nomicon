@@ -1,30 +1,37 @@
 import React from 'react';
-import adapter from '../adapter';
+import adapter from '../../adapter';
+import './LoginSignup.css';
+
+// controlled component to handle Signup
 
 class Signup extends React.Component {
+
   state = {
     username: '',
     password: '',
     password_confirmation: ''
-  }
+  };
 
+  // on submit, provide call signup fetch using state as argument
+  // if successful, change browser URL and set user token for hot login
   handleSignup = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     adapter.auth.signup(this.state).then(res => {
       if (res.error) {
-        alert(res.error)
+        alert(res.error);
       } else {
-        this.props.history.push('/')
-        this.props.setUser(res)
-      }
-    })
-  }
+        this.props.history.push('/');
+        this.props.setUser(res);
+      };
+    });
+  };
 
+  // control text input fields
   onInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -40,8 +47,8 @@ class Signup extends React.Component {
 
         <input className="submit-button" type="submit" value="Sign Up" />
       </form>
-    )
-  }
-}
+    );
+  };
+};
 
-export default Signup
+export default Signup;

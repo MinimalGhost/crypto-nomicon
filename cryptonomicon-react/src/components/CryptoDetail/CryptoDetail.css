@@ -1,0 +1,35 @@
+.content {
+  background: black;
+  grid-area: content;
+  border: 5px solid green;
+  border-radius: 10px;
+  font-family: 'VT323', monospace;
+  font-size: 2em;
+  color: white
+}
+
+.content-detail {
+  margin-left: 25px;
+}
+
+.content button {
+  font-family: 'VT323', monospace;
+  font-size: 0.8em;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 5px;
+  background-color: black;
+  color: red;
+  margin-top: 15px;
+}
+
+.content button:hover {
+  font-family: 'VT323', monospace;
+  font-size: 0.8em;
+  border: 2px solid;
+  border-color: red;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  margin-top: 15px;
+}

@@ -2,15 +2,23 @@ class ApplicationController < ActionController::API
 
   private
 
+  # remove unwanted api data fields and rename 24h_volume_usd
+
+  def get_crypto_attrs(obj)
+    props = obj.except('id', '24h_volume_usd', 'max_supply')
+    props['daily_volume_usd'] = obj['24h_volume_usd']
+    props
+  end
+
   def create_or_update_cryptos
     response = RestClient.get("https://api.coinmarketcap.com/v1/ticker/")
-    iKnowKungFu = JSON.parse(response)
-    iKnowKungFu.each do |obj|
+    cryptos_arr = JSON.parse(response)
+    cryptos_arr.each do |obj|
       c = Crypto.find_by(name: obj['name'])
       if c
-        c.update(name: obj['name'], symbol: obj['symbol'], rank: obj['rank'], price_usd: obj['price_usd'], price_btc: obj['price_btc'], daily_volume_usd: obj['24h_volume_usd'], market_cap_usd: obj['market_cap_usd'], available_supply: obj['available_supply'], total_supply: obj['total_supply'], percent_change_1h: obj['percent_change_1h'], percent_change_24h: obj['percent_change_24h'], percent_change_7d: obj['percent_change_7d'], last_updated: obj['last_updated'])
+        c.update(get_crypto_attrs(obj))
       else
-        Crypto.create(name: obj['name'], symbol: obj['symbol'], rank: obj['rank'], price_usd: obj['price_usd'], price_btc: obj['price_btc'], daily_volume_usd: obj['24h_volume_usd'], market_cap_usd: obj['market_cap_usd'], available_supply: obj['available_supply'], total_supply: obj['total_supply'], percent_change_1h: obj['percent_change_1h'], percent_change_24h: obj['percent_change_24h'], percent_change_7d: obj['percent_change_7d'], last_updated: obj['last_updated'])
+        Crypto.create(get_crypto_attrs(obj))
       end
     end
     cryptos = Crypto.all
